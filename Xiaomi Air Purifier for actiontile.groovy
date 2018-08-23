@@ -418,10 +418,10 @@ def setStatus(params){
     	break;
     case "pm2.5":
     	sendEvent(name:"fineDustLevel", value: params.data)
+	sendEvent(name: "carbonDioxide", value:params.data, unit: "ppm", isStateChange: true)
     	break;
     case "aqi":
     	sendEvent(name:"fineDustLevel", value: params.data)
-        sendEvent(name: "carbonDioxide", value:params.data, unit: "ppm", isStateChange: true)
     	break;
     case "relativeHumidity":
     	sendEvent(name:"humidity", value: params.data)
